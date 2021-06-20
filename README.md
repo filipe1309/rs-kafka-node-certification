@@ -18,10 +18,10 @@ This project was developed following Youtube's [Code Challenge: Micro-serviços 
 - [Apache Kafka](https://kafka.apache.org/)
 - [Docker](https://www.docker.com/)
 - [Docker Compose](https://docs.docker.com/compose/)
+- [Dockerize](https://github.com/jwilder/dockerize)
 
 ## :scroll: Requirements
 
-- [Node.js](https://nodejs.org/en/)
 - [Docker](https://www.docker.com/)
 - [Docker Compose](https://docs.docker.com/compose/)
 
@@ -37,24 +37,10 @@ cd rs-kafka-node-certification
 
 ## :runner: Running
 
-**Up Kafka container**
+**Up Kafka container, API & Certification microservice**
 
 ```sh
 docker-compose up
-```
-
-**Up API**
-
-```sh
-cd api
-yarn dev
-```
-
-**Up Node.js Certification Microservice**
-
-```sh
-cd certification
-yarn dev
 ```
 
 **Call the API**

@@ -9,8 +9,8 @@ const app = express()
  */
 const kafka = new Kafka({
     clientId: "api",
-    brokers: ["localhost:9094"],
-    // brokers: ["kafka:9092"],
+    // brokers: ["localhost:9094"],
+    brokers: ["kafka:9094"],
     retyr: {
         initialRetryTime: 300,
         retries: 10,
@@ -33,12 +33,10 @@ app.use((req, res, next) => {
  */
 app.use(routes)
 
-const topic = "CERTIFICATION_RESPONSE"
-
 async function run() {
     await producer.connect()
     await consumer.connect()
-    await consumer.subscribe({ topic })
+    await consumer.subscribe({ topic: "CERTIFICATION_RESPONSE" })
     await consumer.run({
         eachMessage: async({ topic, partition, message }) => {
             const prefix = `${topic}[${partition} | ${message.offset}] / ${message.timestamp}`

@@ -42,10 +42,24 @@ services:
     extra_hosts:
       - "host.docker.internal:172.17.0.1"
 
-  # node:
-  #   build: ./node
-  #   volumes:
-  #     - ./node:/usr/src/app
-  #     - /usr/src/app/node_modules
-  #   ports:
-  #     - 3333:3333
+  node-api:
+    build: ./api
+    entrypoint: dockerize -wait http://control-center:9021 -timeout 300s -wait-retry-interval 5s
+    command: yarn dev
+    volumes:
+      - ./api:/usr/src/app
+      - /usr/src/app/node_modules
+    ports:
+      - 3333:3333
+    depends_on:
+      - kafka
+
+  node-ms:
+    build: ./certification
+    entrypoint: dockerize -wait http://control-center:9021 -timeout 300s -wait-retry-interval 5s
+    command: yarn dev
+    volumes:
+      - ./certification:/usr/src/app
+      - /usr/src/app/node_modules
+    depends_on:
+      - node-api

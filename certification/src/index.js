@@ -5,7 +5,7 @@ import { Kafka } from "kafkajs"
  */
 const kafka = new Kafka({
     clientId: "certificate",
-    brokers: ["localhost:9094"],
+    brokers: ["kafka:9094"],
 })
 
 const topic = "ISSUE_CERTIFICATE"

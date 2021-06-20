@@ -14,6 +14,7 @@ This project was developed following Youtube's [Code Challenge: Micro-serviços 
 ## :computer: Technologies
 
 - [Node.js](https://nodejs.org/en/)
+- [KafkaJS](https://kafka.js.org/)
 - [Apache Kafka](https://kafka.apache.org/)
 - [Docker](https://www.docker.com/)
 - [Docker Compose](https://docs.docker.com/compose/)

@@ -1,4 +1,4 @@
-# <p align="center">Certifications Gen microservice with Node.js & Kafka 💀</p>
+# <p align="center">Certifications Gen microservice with Node.js & Kafka 📄</p>
 
 <p align="center">
     <img src="https://img.shields.io/badge/Tools-Apache_Kafka-informational?style=flat-square&logo=apache-kafka&color=231F20&logoColor=231F20" alt="Apache Kafka" />
